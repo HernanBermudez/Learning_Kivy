@@ -13,6 +13,7 @@ class WidgetsExample(GridLayout):
     estado = BooleanProperty(False)
     conteo = 0
     my_text = StringProperty("Como fue!")
+    text_input_str = StringProperty("El Combazo")
     # slider_value_txt = StringProperty("")
     def on_toggle_button_state(self, widget):
         print("toggle state" + widget.state)
@@ -29,6 +30,10 @@ class WidgetsExample(GridLayout):
             self.my_text = str(self.conteo)
     def on_switch_active(self, widget):
         print("Switch" +str(widget.active))
+
+    def on_text_validate(self, widget):
+        self.text_input_str = widget.text
+        pass
 
     # def on_slider_value(self, widget):
       #  print("Slider: " + str(int(widget.value)))
