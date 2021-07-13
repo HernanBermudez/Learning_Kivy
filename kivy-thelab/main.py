@@ -1,5 +1,6 @@
 
 from kivy.app import App
+from kivy.graphics import Line, Color, Rectangle
 from kivy.metrics import dp
 from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.anchorlayout import AnchorLayout
@@ -71,5 +72,36 @@ class MainWidget(Widget):
 
 class TheLabApp(App):
     pass
+
+class CanvasExample1(Widget):
+    pass
+
+class CanvasExample2(Widget):
+    pass
+
+class CanvasExample3(Widget):
+    pass
+
+class CanvasExample4(Widget):
+    def __init__(self, **kwargs):
+        super(CanvasExample4, self).__init__(**kwargs)
+        with self.canvas:
+            Line(points = (100, 100, 400, 500 ), width = 2)
+            Color(0, 1, 0)
+            # Line(circle = (400, 200, 80), width = 2)
+            #Line(rectangle=(700, 500, 150, 100), width=4)
+            self.rect = Rectangle(pos = (400, 200), size = (150, 100))
+
+    def on_button_a_click(self):
+        x, y = self.rect.pos
+        x += dp(10)
+        # y += dp(10)
+        if (x < self.width- 150):
+            self.rect.pos = (x, y)
+        else:
+            x -= dp(10)
+            self.rect.pos = (x, y)
+
+
 
 TheLabApp().run()
