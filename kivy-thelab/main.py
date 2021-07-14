@@ -91,6 +91,8 @@ class CanvasExample4(Widget):
             # Line(circle = (400, 200, 80), width = 2)
             #Line(rectangle=(700, 500, 150, 100), width=4)
             self.rect = Rectangle(pos = (400, 200), size = (150, 100))
+            Color(0, 0, 1)
+            Line(points = (100, 100, 600, 100), width = 2)
 
     def on_button_a_click(self):
         x, y = self.rect.pos
