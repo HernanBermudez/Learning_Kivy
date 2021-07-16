@@ -143,6 +143,10 @@ class CanvasExample5(Widget):
         # self.ball_size / self.width
         # self.vx = - self.vx
 
+class CanvasExample6(Widget):
+    pass
 
+class CanvasExample7(BoxLayout):
+    pass
 
 TheLabApp().run()
